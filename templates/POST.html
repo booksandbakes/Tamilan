@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>TamilanTamil</title>
+  </head>
+<body style="background-color:rgb(151, 60, 60);">
+  {% include 'navigation.html' %}
+    <ul>
+        <h1 style="text-align: center;text-transform: uppercase;color: white; font-weight: 700;">Tittle</h1>
+        {% for i in form %}
+        <div class="container">
+          <div class="panel panel-default">
+            <div class="panel-heading"> <a href="{% url 'dis' tittle=i.tittle contend=i.contend %}" style="color: black;"><li>{{ i.tittle }}</li></a></div>
+          </div>
+        </div>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
+    
+
+
+
+ 

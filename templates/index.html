@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TamilanTamil</title>
+        <meta name='viewport' content='width=device-width,initial-scale=1'>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <style>
+            .list-group-items{
+                color: rgb(10, 1, 1);
+                font-size: medium;                
+            }
+            .add{
+                color:whitesmoke;
+                text-align: center;
+                background-color:black;
+            }
+            .form{
+                text-align: center;
+            }
+            .header {
+            padding: 10px 16px;
+            background:#333;
+
+            }
+
+            .content {
+            padding: 16px;
+            }
+
+            .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            }
+            
+            .button {
+            background-color:black; /* Green */
+            border: none;
+            color:white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+          }
+          .button5 {border-radius: 30%;}
+
+        </style>
+    </head>
+
+    <body style="background-color: burlywood;">
+        <div class="header" id="myHeader">
+        {% include 'navigation.html' %}
+        </div>
+        <div class="text-center mt-2" style="text-align: center;margin-left: 900px;">
+            <a  href="/logout"><p class="button button5">Logout</p></a>
+        </div> 
+        <div class="content">   
+        <form action="{% url 'add' %}" method="POST" role="form" class='form'>
+           
+            {% if user.is_authenticated %}
+                <h2>Hi {{ user.username }}!</h2>
+            {% else %}
+            <p>You are not logged in</p>
+            {% endif %}
+    
+            {% csrf_token %}
+            {{ data.as_p }}
+            <input type='submit' value='Publish' class= "add">
+            
+        </form>
+        <ul>
+            {% for i in form %}
+               <a href="{% url 'dis' tittle=i.tittle contend=i.contend %}"><li class='list-group-items'>{{ i.tittle }}</li></a>
+            {% endfor %}
+        </ul>
+        </div>
+    </body>
+    <!--<script>          
+        window.onscroll = function() {myFunction()};
+        
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+
+        }
+    </script>-->
+</html>

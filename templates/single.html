@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TamilanTamil</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        .parallax {
+            
+            background-image: url('/static/images/black3.jpg');    
+            min-height: 500px; 
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            }
+                    
+            .header {
+            padding: 10px 16px;
+            background: #555;
+
+            }
+
+            .content {
+            padding: 16px;
+            }
+
+            .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            }
+                    
+            .button {
+            background-color:rgb(37, 33, 33); /* Green */
+
+            border: none;
+            color:white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+          }
+          .button5 {border-radius: 30%;}
+
+    </style>
+</head>
+
+<body>
+    
+    <div class="header" id="myHeader">
+        <h1 style="text-align: center;text-transform: uppercase;color: black;font-weight: 600;">{{tittle}}</h1>
+    </div>
+
+    <div class="content">
+    <div class="parallax"><br><br>
+    <div style="height:1000px;font-size:30px;color:white;padding-left: 7em;padding-right: 7em;text-align: center;" >{{contend}}
+    <br/><br/><br/>
+ 
+    <div class="text-center mt-2" style="text-align: center;">
+        <a  href="/post"><p class="button button5">Back</p></a>
+    </div>
+
+</div>
+    </div>
+    </div>
+                                                 <!--Static header script-->
+    <script>               
+        window.onscroll = function() {myFunction()};
+        
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        }
+        </script>
+
+</body>
+</html>

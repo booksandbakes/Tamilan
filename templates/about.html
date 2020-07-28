@@ -1,0 +1,63 @@
+{% load static %} 
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/file.css' %}">
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title>TamilanTamil</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        img{
+            border-radius: 50%;
+            border-color:gray;
+            padding: 60px;
+            margin-right: 60px;
+            margin-left: 65px;
+        }
+        .parallax{
+            background-color: honeydew;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax"> {% include 'navigation.html' %} </div>
+   
+<h1 style="text-align: center;font-family: Lucida Calligraphy; font-weight: 1000; font-style: oblique; margin-top: 5px;color:black;"><br/>Top Users of Our Website</h1>
+<h3 class="section-subheading text-muted" style="text-align: center;">Congralation Dears!!!</h3>
+<form>
+    <table>
+        <tr>
+            <th>
+                <img src='/static/images/img3.jpg' alt='Avatar' width="300" height="300">
+                <h2 style="text-align: center;" > {{ name1 }}</h2>
+                <h4 style="text-align: center;font-family: Monotype Corsiva;">{{ city1 }} </h4>
+
+            </th>
+            <th>
+                <img src='/static/images/img3.jpg' alt='Avatar' width="300" height="300">
+                <h2 style="text-align: center;" >{{ name2 }}</h2>
+                <h4 style="text-align: center;font-family: Monotype Corsiva;">{{ city2 }} </h4>
+            </th>
+            <th>
+                <img src='/static/images/img3.jpg' alt='Avatar' width="300" height="300">
+                <h2 style="text-align: center;" >{{ name3 }} </h2>
+                <h4 style="text-align: center;font-family: Monotype Corsiva;"> {{ city3 }} </h4>
+            </th>
+        </tr>
+    </table><br/><br />
+    <section class="page-section bg-light" id="team">
+        <div class="container" style="color: black;">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center"><p class="large text-muted"> This page is to Convey our Tamilan Views on different things to other language people, You can publish your thoughts in either English or Tamil.
+                    Frequently used people will be selected based on no of Publishes you made, and mailed privately.</p></div>
+            </div>
+        </div>
+    </section>
+</form>
+
+</body>
+</html>
